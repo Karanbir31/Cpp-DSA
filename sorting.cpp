@@ -27,7 +27,5 @@ int main(){
     enterArrayData(arr, arrSize);
     DisplayArrayData(arr, arrSize);
 
-    
-
     return 0;
 }
