@@ -1,11 +1,12 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 
 int primeOrNot(int number){
     if(number == 0 || number == 1){
         return 0;
     }
-    for(int i =2; i < number/2 +1 ; i++){
+    for(int i =2; i < sqrt(number) ; i++){
         if(number%i == 0){
             return 0;
         }
