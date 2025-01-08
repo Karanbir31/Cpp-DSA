@@ -33,6 +33,20 @@ void bubbleSort(int * arr, int arrSize = 0){
     }
 }
 
+void InsertionSort(int * arr, int arrSize = 0){
+    for(int i = 1; i < arrSize ; i++){
+        int j = i ;
+        int temp = arr[j];
+
+        //current element to swift on its right pos is arr[j]
+        while(arr[j-1] > temp && j > 0){
+            arr[j] = arr[j-1];      
+            j--;
+        }
+    
+        arr[j] = temp;
+    }
+}
 
 int main(){
    
@@ -40,10 +54,12 @@ int main(){
     int arr[arrSize] = {2, 5, 1, 8, 9, 7, 2, 3, 8, 1};
 
    // enterArrayData(arr, arrSize);
-    cout<<" \n Before Sorting ";
+    cout<<"Before Sorting ";
     DisplayArrayData(arr, arrSize);
 
-    bubbleSort(arr, arrSize);
+   // bubbleSort(arr, arrSize);
+
+   InsertionSort(arr, arrSize);
 
     cout<<"\n After the soring";
     DisplayArrayData(arr, arrSize);
