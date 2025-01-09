@@ -26,6 +26,11 @@ void sumOfSubArrays(int *arr, int arrSize)
 
 void longestArithematicSubArray(int *arr, int arrSize)
 {
+    if(arrSize<=2){
+        cout<<"array is two small to be in Ap ";
+        return;
+    }
+
     int st = 0, ed = 1, currLen = 2, maxLen = 2;
     int currDiff = arr[st] - arr[ed];
     int maxAPStarting = st;
@@ -54,6 +59,11 @@ void longestArithematicSubArray(int *arr, int arrSize)
             currLen = 2;
         }
     }
+    if(maxLen > currLen){
+        maxLen = currLen;
+        //whole array is in Ap
+    }
+
     cout << "Length of largest arithematic subArray is : " << maxLen;
     cout<<"\n Longest Ap as SubArray is : ";
     for(int i = maxAPStarting; i <= maxAPEnding ; i++){
