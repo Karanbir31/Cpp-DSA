@@ -24,29 +24,29 @@ void sumOfSubArrays(int *arr, int arrSize)
     }
 }
 
-int maximunOfTwoNumber(int a, int b)
-{
-    if (a > b)
-    {
-        return a;
-    }
-    return b;
-}
-
 void longestArithematicSubArray(int *arr, int arrSize)
 {
     int st = 0, ed = 1, currLen = 2, maxLen = 2;
     int currDiff = arr[st] - arr[ed];
+    int maxAPStarting = st;
+    int maxAPEnding = ed;
     while (ed < arrSize - 1 && st <= ed)
     {
         if (currDiff == (arr[ed] - arr[ed + 1]))
         {
             ed++;
+            maxAPEnding = ed;
             currLen++;
         }
         else
         {
-            maxLen = maximunOfTwoNumber(maxLen, currLen);
+            if(maxLen < currLen){
+                maxAPStarting = st;
+                maxAPEnding = ed;
+
+                maxLen = currLen;
+            }
+           
             st = ed;
             ed = ed + 1;
             currDiff = arr[st] - arr[ed];
@@ -55,6 +55,10 @@ void longestArithematicSubArray(int *arr, int arrSize)
         }
     }
     cout << "Length of largest arithematic subArray is : " << maxLen;
+    cout<<"\n Longest Ap as SubArray is : ";
+    for(int i = maxAPStarting; i <= maxAPEnding ; i++){
+        cout<<arr[i]<<" ";
+    }
 }
 
 int main()
