@@ -10,16 +10,10 @@ int numberOfRecordBreakingDays(int *arr, int arrSize = 0)
     {
         if (arr[i] > currMaxVisitor && (i == arrSize-1 || arr[i] > arr[i + 1]))
         {
-            // arr[i] > currMaxVisitor means number of vistior on currDay is currMaxVisitor on previous days
-            // i is arrSize -1 , means it is last element in arrray and we use || logic or 
-                // so it will return True and skip arr[i]> arr[i+1] as True OR (1,0) is true so it skip it
-            // arr[i]< arr[i+1] , check the currVisitor is greater than next days, for days index 2nd upper condition work
             currMaxVisitor = arr[i];
             count++;
         }else{
             currMaxVisitor = max(currMaxVisitor, arr[i]);
-            // so in if condition it is posible that currElement is maximum till now but next element is even greater
-            // so in this case condition 1 is true and 2nd is False which overall false so we have to update currMaxVisitors
         }
     }
     return count;
