@@ -6,11 +6,7 @@ using namespace std;
 
 int smallestMissingNumber(int *arr, int size){
     const int N = 1e6 +2;
-    bool check[N];
-
-    for(int i =0; i <= N; i++){
-        check[i] = false;
-    }
+    bool check[N] = {false};
 
     for (int i = 0; i < size ; i++){
         if(arr[i] >= 0){
@@ -18,12 +14,12 @@ int smallestMissingNumber(int *arr, int size){
         }
     }
 
-    for(int i =0; i <= N; i++ ){
-        if(!check[i]){
+    for(int i =0; i < N; i++ ){
+        if(!check[i] ){
             return i;
         }
     }
-
+    return -1;
 }
 
 int main(){
