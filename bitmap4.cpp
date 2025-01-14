@@ -11,7 +11,11 @@ int uniqueNumber(int arr[], int size){
     return xorsum;
 }
 
-int setBit(int n , int pos){
+int setBit(int n, int pos){
+    return (n | (1<<pos));
+}
+
+int getBit(int n , int pos){
     return ((n & (1 << pos)) != 0);
 }
 
@@ -21,7 +25,7 @@ int posRightMostOne(int n){
     }
     int pos = 0;
     while(true){
-        if(setBit(n, pos)){
+        if(getBit(n, pos)){
             return pos;
         }else{
             pos++;
@@ -44,7 +48,7 @@ void twoUniqueNumbers(){
     int pos = posRightMostOne(xorsum);
     int newxor = 0;
     for(int i = 0; i < size ; i++){
-        if(setBit(arr[i], pos) ){
+        if(getBit(arr[i], pos) ){
             newxor = newxor ^ arr[i];
         }
     }
@@ -54,10 +58,35 @@ void twoUniqueNumbers(){
 
 }
 
+int uniqueNumberINtriplet(){
+    //every number is present 3 times except one
+    int size = 10;
+    int arr[size] = {1, 3, 2, 3, 4, 2, 1, 1, 3, 2};
+    
+    int result = 0;
+
+    for (int i = 0; i < 64; i++){
+        // 64 becaus maximum size of number store in int is 2^64 -1
+        
+        int sum = 0;
+        for(int j = 0; j < size; j++){
+            if(getBit(arr[j], i)){
+                sum++;
+            }
+        }
+        if(sum % 3 != 0){
+          result =  setBit(result, i);
+        }
+    }
+    return result;
+}
+
 int main(){
     int arr[7] = {1, 2, 3, 5, 1, 2, 3};
     cout << "unique number is : " << uniqueNumber(arr, 7);
 
     twoUniqueNumbers();
+
+    cout << "\nunique value is in triplet array : " << uniqueNumberINtriplet();
     return 0;
 }
