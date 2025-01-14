@@ -15,4 +15,4 @@ Bit Manipulation (bitman)
 1. bitman1 - get bit, set bit, clear bit, update bit
 2. bitman2 - power of 2, 
             - count number of 1's in a number
-3. bitmap3 - print all subSets
+3. bitmap3 - print all subSets,3
