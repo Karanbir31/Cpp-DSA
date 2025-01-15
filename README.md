@@ -18,3 +18,12 @@ Bit Manipulation (bitman)
 3. bitmap3 - print all subSets
 4. bitmap4 - find a unique number in an array in which every number is present twice  except one
             single unique number in array of triplets
+
+// thinks to add, prime factor, sieve of eratosthenes
+
+#RECURSION PROBLEMS
+recursionBasic --- sum till n,   factorial,   n to power p,   fibonaci series
+
+recursionArraySort -- check array is sorted
+recursionPrintNumbers -- print number in increasing and decreasing order
+recursion_FL_Occurence-- print 1st and last occurence of a number in array
