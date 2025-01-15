@@ -17,3 +17,4 @@ Bit Manipulation (bitman)
             - count number of 1's in a number
 3. bitmap3 - print all subSets
 4. bitmap4 - find a unique number in an array in which every number is present twice  except one
+            single unique number in array of triplets

@@ -13,11 +13,29 @@ int primeOrNot(int number){
     }
     return 1;
 }
+
+void sieveOfEratosthenes(int n = 50){
+    int arr[n + 1] = {0};
+
+    for(int i = 2; i <= n; i++){
+        for(int j = i*i; j <= n; j += i){
+            arr[j] = 1;
+        }
+    }
+    for(int i = 2; i <= n; i++){
+        if(arr[i] == 0){
+            cout<<i<<"  ";
+        }
+    }
+}
+
 int main(){
     int number;
-    char ch = 'y';
+    char ch = 'n';
+
+    sieveOfEratosthenes(50);
     
-    do{
+    while ( ch == 'y' || ch == 'Y'){
         cout<<"Enter the number to check prime or not :";
         cin>>number;
         cout<<endl<<abs(number)<<endl;
@@ -26,10 +44,8 @@ int main(){
          }else{
            cout<<number<<" is not a prime number\n";
          }
-
         cout<<"Do you want to check another number (y/n) :";
         cin>>ch;
-
-    }while ( ch == 'y' || ch == 'Y');
+    }
     return 0;
 }
