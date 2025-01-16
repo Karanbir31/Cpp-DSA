@@ -24,6 +24,7 @@ RECURSION PROBLEMS
 2. recursionArraySort              -- check array is sorted
 3. recursionPrintNumbers           -- print number in increasing and decreasing order
 4. recursion_FL_Occurence          -- print 1st and last occurence of a number in array
-4. recursion_reverseString          -- print a string in reverse order
+5. recursion_reverseString          -- print a string in reverse order
                                     -- replace pi with 3.14 in a string
 6. recursion_TowerOfHanoi           -- Tower of Hanoi
+7. recursion_substrings              -- to print substring, and substring with ASCII codes
