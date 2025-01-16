@@ -7,6 +7,8 @@ bool checkArraySorted(int arr[], int n){
         return true;
     }
     return ( (arr[0] < arr[1]) && checkArraySorted(arr+1, n-1) );
+    //return ( (arr[0] <= arr[1]) && checkArraySorted(arr+1, n-1) );
+    //return ( (arr[0] >= arr[1]) && checkArraySorted(arr+1, n-1) );
 
 }
 
