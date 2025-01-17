@@ -30,3 +30,4 @@ RECURSION PROBLEMS
 7. recursion_substrings              -- to print substring, and substring with ASCII codes
 8. recursion_keypadProblem          -- to print all combinations of character with two number to keypad
 9. recursion_permutations           -- to print all permutations of a string
+10. recursion_numberOfPaths         -- count number of paths to move from Point A to B
