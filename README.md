@@ -31,3 +31,4 @@ RECURSION PROBLEMS
 8. recursion_keypadProblem          -- to print all combinations of character with two number to keypad
 9. recursion_permutations           -- to print all permutations of a string
 10. recursion_numberOfPaths         -- count number of paths to move from Point A to B
+11. recursion_tilingProblem         -- number of ways to tile (2*1) on board 2*n 
