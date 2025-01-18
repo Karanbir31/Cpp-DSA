@@ -19,10 +19,21 @@ int numberOfPaths(int s, int e, string path = ""){
     return count;
 }
 
+// int n*n, number of paths required for move O,O to (n-1, n-1)
+int numberOfPathsInMaze(int n, int x = 0, int y = 0){
+    if(x == n-1 && y == n-1){
+        return 1;
+    }
+    if(x > n-1 || y > n-1){
+        return 0;
+    }
+
+    return numberOfPathsInMaze(n , x+1, y) + numberOfPathsInMaze(n , x, y+1);
+}
+
 int main(){
-    int dist ;
-    cout << "Enter the distination number : ";
-    cin >> dist;
-    cout <<endl << "total paths count : " << numberOfPaths(1, dist, "- ");
+    int dist  = 5;
+    cout <<endl << "total paths count : " << numberOfPaths(1, dist, "start ");
+    cout <<endl << "total paths count IN MAZE(3x3) : " << numberOfPathsInMaze(3);
     return 0;
 }
