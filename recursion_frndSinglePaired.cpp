@@ -5,6 +5,7 @@ using namespace std;
 int frndSingleOrPaired(int n){
     if(n == 0 || n == 1 || n == 2){
         return n;
+        //for n=2(p or ss) n= 1 (s)
     }
     return frndSingleOrPaired(n-1) + frndSingleOrPaired(n-2);
 }
