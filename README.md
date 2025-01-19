@@ -1,6 +1,8 @@
 # Cpp-DSA
 Author - Karanbir Singh
 
+1.patternQus            -- different pattern problems
+
 Array Question 
 1. array1                   -- Max till i.
 2. array2                   -- sum of all subArrays.
