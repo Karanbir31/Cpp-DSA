@@ -36,3 +36,7 @@ RECURSION PROBLEMS
 11. recursion_tilingProblem         -- number of ways to tile (2*1) on board 2*n 
 12. recursion_frndSinglePaired      -- NOW in which n frnds can remain single and paired up
 13.recursion_knapsackProblem        -- Knapsack problem, max value with limited weight
+
+#Backtracking -- bt
+1. bt_ratInMaze                      -- rat in maze problem
+2. bt_nQueen                         -- place n queens in n*n board so that no one can attck each other   
