@@ -1,13 +1,10 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
 bool myCompare(pair<int, int> p1, pair<int, int> p2){
     return p1.first <= p2.first;
-}
-
-void vectorSort(vector<pair<int, int>> v){
-    
 }
 
 int main(){
@@ -30,7 +27,17 @@ int main(){
        v.push_back( make_pair(arr[i], i));
     }
 
-    vectorSort(v);
+   sort(v.begin(), v.end(), myCompare);
+
+   for(int i = 0; i < (sizeof(arr) / sizeof(arr[0])) ; i++){
+        arr[v[i].second] = i;
+   }
+
+   cout<<"reduce array is : \n";
+   for(int i = 0; i < (sizeof(arr) / sizeof(arr[0])) ; i++){
+       cout<< arr[i] << ' ';
+   }
+
 
     return 0;
 }
