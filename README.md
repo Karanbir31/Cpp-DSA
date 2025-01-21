@@ -43,4 +43,4 @@ RECURSION PROBLEMS
 1. bt_ratInMaze                      -- rat in maze problem
 2. bt_nQueen                         -- place n queens in n*n board so that no one can attck each other   
 3. bt_sudoku                         -- to solve a n*n sudoku ****
-
+4. bt_minSquares                     -- no. of square to cover m*n rect
