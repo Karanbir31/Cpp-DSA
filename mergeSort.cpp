@@ -4,7 +4,7 @@ using namespace std;
 
 void merge(int arr[], int st, int mid, int ed){
     int n1 = mid - st + 1;
-    int n2 = ed - mid + 1;
+    int n2 = ed - mid ;
     int a[n1];
     int b[n2];
 
@@ -12,14 +12,14 @@ void merge(int arr[], int st, int mid, int ed){
         a[i] = arr[st + i];
     }
     for(int i=0; i < n2; i++){
-        b[i] = arr[mid + i];
+        b[i] = arr[mid +1+ i];
     }
 
     int i = 0;
     int j = 0;
     int k = st;
 
-    while(i < n1 || j < n2){
+    while(i < n1 && j < n2){
         if(a[i] <= b[j]){
             arr[k] = a[i];
             i++;
@@ -43,18 +43,18 @@ void merge(int arr[], int st, int mid, int ed){
         k++;
     }
 
-
 }
 
 void mergeSort(int arr[], int st, int ed){
-    if(st >= ed || st < 0 || ed < 0 ){
+    if( st < 0 || ed < 0 ){
         return;
     }
-    int mid = (st + ed)/2;
-    mergeSort(arr, st, mid);
-    mergeSort(arr, mid+1, ed);
-
-    merge(arr, st, mid, ed);
+    if(st < ed ){
+        int mid = (st + ed)/2;
+        mergeSort(arr, st, mid);
+        mergeSort(arr, mid+1, ed); 
+        merge(arr, st, mid, ed);
+    }
 }
 
 int main(){
