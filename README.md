@@ -1,8 +1,9 @@
 # Cpp-DSA
 Author - Karanbir Singh
 
-1.patternQus            -- different pattern problems
+1. patternQus            -- different pattern problems
 2. vectorBasic
+3. pairBasic
 
 Array Question 
 1. array1                   -- Max till i.
