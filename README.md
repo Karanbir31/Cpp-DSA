@@ -2,6 +2,7 @@
 Author - Karanbir Singh
 
 1.patternQus            -- different pattern problems
+2. vectorBasic
 
 Array Question 
 1. array1                   -- Max till i.
@@ -40,3 +41,5 @@ RECURSION PROBLEMS
 #Backtracking -- bt
 1. bt_ratInMaze                      -- rat in maze problem
 2. bt_nQueen                         -- place n queens in n*n board so that no one can attck each other   
+3. bt_sudoku                         -- to solve a n*n sudoku ****
+
