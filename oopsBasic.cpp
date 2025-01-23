@@ -2,36 +2,68 @@
 using namespace std;
 
 class Student{
-    public:
-        string  name;
-        int age;
-        bool gender;
+    string  name;
+    int age;
+    bool gender;
     
+    public:
+        //constructor does not have return type
+        Student(){
+            name = "notSetYet";
+            age = 0;
+            gender = 0;
+        }
+        Student(string str, int n, bool g){
+            name = str;
+            age = n;
+            gender = g;
+        }
 
-    void printInfo(){
-        cout << "\nname : "<<name << ", age : " << age << ", gender(0-M/1-F) "<<gender;
-    }
+        void setName(string str){
+            name = str;
+        }
+        void setAge(int a){
+            age = a;
+        }
+        void setGender(bool g){
+            gender = g;
+        }
+
+
+        void printInfo(){
+            cout << "\nname : "<<name << ", age : " << age << ", gender(0-M/1-F) "<<gender;
+        }
 };
 
 
 
 int main(){
-    Student a;
-    a.name = "karanbir";
-    a.age = 21;
-    a.gender = 0;
+    Student a("karan", 22, 0);
 
+    a.printInfo();
+    
     Student arr[3] ;
 
     for(int i = 0; i < 3; i++){
+        if(i == 2)
+            break;
+            //just to display default values for arr[2]
+
+        string name;
+        int age;
+        bool gender;
+
         cout<<"enter name :";
-        cin>> arr[i].name;
+        cin>> name;
+        arr[i].setName(name);
 
         cout<<" enter age ";
-        cin >> arr[i].age;
+        cin >> age;
+        arr[i].setAge(age);
 
         cout << "enter gender (0-M / 1-F)";
-        cin >> arr[i].gender;
+        cin >> gender;
+        arr[i].setGender(gender);
     }
     for(int i = 0; i < 3; i++){
         arr[i].printInfo();
