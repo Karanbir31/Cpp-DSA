@@ -43,6 +43,14 @@ class Student{
             cout << "\nname : "<<name << ", age : " << age << ", gender(0-M/1-F) "<<gender;
         }
 
+        //operator overloading
+        bool operator == (Student &s){
+            if(name == s.name && age == s.age && gender == s.gender){
+                return true;
+            }
+            return false;
+        }
+
         ~Student(){
             cout<< endl << "calling destructor ";
         }
@@ -93,5 +101,8 @@ int main(){
     stu1.printInfo();
     stu2.printInfo();
 
+    cout << endl << endl << "operator overloading example";
+    cout<< "\nis stu1 is equeal to stu2 : "<< (stu1 == stu2);
+    cout<< "\nis arr[0] is equeal to stu2 : "<< (arr[0] == stu2);
     return 0;
 }
