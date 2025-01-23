@@ -46,3 +46,10 @@ RECURSION PROBLEMS
 4. bt_minSquares                     -- no. of square to cover m*n rect
 
 #MergeSort
+
+
+# date 23-01-2025 
+# OOPS (Objects Oriented Programming)
+
+1. 23-01-2025    oopsBasic.cpp
+2.

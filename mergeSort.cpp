@@ -5,8 +5,9 @@ using namespace std;
 void merge(int arr[], int st, int mid, int ed){
     int n1 = mid - st + 1;
     int n2 = ed - mid ;
-    int a[n1];
-    int b[n2];
+    // Dynamically allocate temporary arrays
+    int* a = new int[n1];
+    int* b = new int[n2];
 
     for(int i=0; i < n1; i++){
         a[i] = arr[st + i];
@@ -43,14 +44,15 @@ void merge(int arr[], int st, int mid, int ed){
         k++;
     }
 
+     // Free the dynamically allocated memory
+    delete[] a;
+    delete[] b;
+
 }
 
 void mergeSort(int arr[], int st, int ed){
-    if( st < 0 || ed < 0 ){
-        return;
-    }
     if(st < ed ){
-        int mid = (st + ed)/2;
+        int mid = st + (ed - st) / 2; // Avoid overflow in (st + ed)/2
         mergeSort(arr, st, mid);
         mergeSort(arr, mid+1, ed); 
         merge(arr, st, mid, ed);
@@ -59,14 +61,14 @@ void mergeSort(int arr[], int st, int ed){
 
 int main(){
     int n = 9;
-    int arr[n] = {6, 3, 9, 5, 2, 8, 7, 1, 8};
+    int arr[n ] = {6, 3, 9, 5, 2, 8, 7, 1, 8};
 
     cout<<"\narray before sorting : " << endl;
     for(int i=0; i < n; i++){
         cout << arr[i] << " ";
     }
 
-    mergeSort(arr, 0, n);
+    mergeSort(arr, 0, n - 1);
     cout<<"\narray After sorting : " << endl;
     for(int i=0; i < n; i++){
         cout << arr[i] << " ";
