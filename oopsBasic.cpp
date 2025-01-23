@@ -2,6 +2,8 @@
 using namespace std;
 
 class Student{
+    //private by default
+
     string  name;
     int age;
     bool gender;
@@ -17,6 +19,13 @@ class Student{
             name = str;
             age = n;
             gender = g;
+        }
+
+        //copy constructor
+        Student(Student &s){
+            name = s.name;
+            age = s.age;
+            gender = s.gender;
         }
 
         void setName(string str){
@@ -39,10 +48,14 @@ class Student{
 
 int main(){
     Student a("karan", 22, 0);
+    //call constructor with parameters
 
     a.printInfo();
+    cout<< endl;
     
     Student arr[3] ;
+    //call constructor without parameters / default constructor 
+    //call 3 timmes | for arr[0], arr[1], arr[2]
 
     for(int i = 0; i < 3; i++){
         if(i == 2)
@@ -68,6 +81,13 @@ int main(){
     for(int i = 0; i < 3; i++){
         arr[i].printInfo();
     }
+
+    Student stu1 = arr[0];
+    Student stu2(arr[1]);
+
+    cout << "\nstu1 and stu2 using copy constructor ";
+    stu1.printInfo();
+    stu2.printInfo();
 
     return 0;
 }
