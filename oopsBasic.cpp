@@ -42,6 +42,10 @@ class Student{
         void printInfo(){
             cout << "\nname : "<<name << ", age : " << age << ", gender(0-M/1-F) "<<gender;
         }
+
+        ~Student(){
+            cout<< endl << "calling destructor ";
+        }
 };
 
 
